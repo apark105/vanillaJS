@@ -2,11 +2,15 @@
   "name": "createJsApp",
   "version": "1.0.0",
   "description": "A HTML, CSS, VanillaJS Project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apark105/vanillaJS"
+  },
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +21,16 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.5.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.css$": "<rootDir>/__mocks__/style.js"
+    }
   }
 }
